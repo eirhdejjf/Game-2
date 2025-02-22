@@ -1,0 +1,53 @@
+/* Фон страницы с градиентом от зеленого к желтому */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #8bc34a, #ffeb3b); /* Градиент от зеленого к желтому */
+}
+
+/* Оформление галереи */
+.gallery {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Оформление рамок для изображений с розово-оранжевым градиентом */
+.frame {
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff7eb9, #ffb347); /* Градиент от розового к оранжевому */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 5px solid transparent; /* Рамка, которая будет через градиент */
+    background-clip: padding-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, border-color 0.3s ease;
+}
+
+/* Эффекты при наведении */
+.frame:hover {
+    transform: scale(1.05); /* Увеличение рамки */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Углубление тени */
+    filter: brightness(1.1); /* Сделать изображение ярче */
+    border-color: #8bc34a; /* Зелёная рамка при наведении */
+}
+
+/* Оформление изображений внутри рамок */
+.frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+/* Плавное исчезновение при наведении */
+.frame:hover img {
+    opacity: 0.9; /* Немного прозрачности при наведении */
